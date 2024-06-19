@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import BookCard from "../../components/BookCard/BookCard";
 import axios from "axios";
-import './Books.css'
+import { Helmet } from "react-helmet";
+import "./Books.css";
 
 function Books() {
   const [books, setBooks] = useState([]);
@@ -18,9 +19,15 @@ function Books() {
   }, []);
   return (
     <div className="book-list">
+      <div className="application">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>All Books</title>
+        </Helmet>
+      </div>
       {books.map((book) => (
         <>
-          <BookCard key={book.id} book={book}/>
+          <BookCard key={book.id} book={book} />
         </>
       ))}
     </div>

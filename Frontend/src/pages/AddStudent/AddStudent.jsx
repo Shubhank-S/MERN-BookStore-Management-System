@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
 import "./AddStudent.css";
+import { Helmet } from "react-helmet";
 
 function AddStudent() {
   const [rollNumber, setRollNumber] = useState("");
@@ -32,7 +33,11 @@ function AddStudent() {
   };
 
   return (
-    <div className="login-page">
+    <div className="login-page" >
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>Add Student</title>
+        </Helmet>
       <div className="login-container">
         <h2>Add Student</h2>
         <br />
